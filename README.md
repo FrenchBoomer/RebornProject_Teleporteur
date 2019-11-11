@@ -8,6 +8,14 @@
 <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/WalterWhite84/RebornProject_Teleporteur?color=ff69b4&label=RebornProject_Teleporteur&logo=RebornProject">
 <br>
 <br>
+<h2>Marqueur fermer : </h2>
+<img src=https://imgur.com/0MKXfaf.png alt="" />
+<br>
+<br>
+<h2>Marqueur ouvert : </h2>
+<img src=https://imgur.com/tPWqbHE.png alt="" />
+<br>
+<br>
 Reglages : 
 
 <img src=https://imgur.com/XcVXYqi.png alt="" />
