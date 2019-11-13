@@ -12,7 +12,6 @@ local Touches = {
 
     }
 
-
 ToucheClavier = Touches["F6"] -- Touche d'ouverture du menu
 Langue = "fr" -- Choix de la langue (Français = fr, Anglais = en, Espagnol = es)
 Administration = false -- NE PAS TOUCHER !!!!!!!
@@ -24,6 +23,7 @@ current_coords = 0 -- NE PAS TOUCHER !!!!!!!
 BlipID = 162 -- Choix du blip
 BlipTaille = 0.6 -- Choix de la taille du blip
 BlipCouleur = 83 -- Choix de la couleur du blip
+BlipClignotant = true -- Option pour faire clignoter le blip
 
 ListeBlanche = { -- whiteliste
     {steam= "steam:00000000000000000000000"},
@@ -38,27 +38,28 @@ Locales = {
         ['ouvrir'] = '~INPUT_SELECT_CHARACTER_FRANKLIN~ pour ouvrir 🔓',
         ['fermer'] = '~INPUT_SELECT_CHARACTER_FRANKLIN~ pour fermer 🔒',
         ['notifwhiteliste'] = '~r~Vous ne faites pas parti de la whiteliste~s~',
+        ['refusvehicule'] = '~r~Vehicules refuser~s~',
     },
 
     ['en'] ={
         ['ouvrir'] = '~INPUT_SELECT_CHARACTER_FRANKLIN~ for open 🔓',
         ['fermer'] = '~INPUT_SELECT_CHARACTER_FRANKLIN~ for close 🔒',
-        ['notifwhiteliste'] = '~r~You are not part of the whiteliste~s~',
+        ['refusvehicule'] = '~r~Vehicle refuse~s~',
     },
 
     ['es'] ={
         ['ouvrir'] = '~INPUT_SELECT_CHARACTER_FRANKLIN~ para abrir 🔓',
         ['fermer'] = '~INPUT_SELECT_CHARACTER_FRANKLIN~ para cerca 🔒',
-        ['notifwhiteliste'] = '~r~No eres parte de la whiteliste~s~',
+        ['refusvehicule'] = '~r~Basura del vehículo~s~',
     },
 }
 
 Coordonnees = {
 
-    { x1 = -1009.940, y1 = -2984.340, z1 = 13.950, h1 = 241.750, x2 = 460.260, y2 = -994.230, z2 = 24.910, h2 = 272.890, verrouiller = true, whiteliste = true, nom = "Cellule 1"},
-    { x1 = -1012.610, y1 = -2989.210, z1 = 13.950, h1 = 241.750, x2 = 459.690, y2 = -997.790, z2 = 24.910, h2 = 272.890, verrouiller = true, whiteliste = false, nom = "Cellule 2"},
-    { x1 = -1015.220, y1 = -2994.220, z1 = 13.950, h1 = 241.750, x2 = 459.520, y2 = -1001.440, z2 = 24.910, h2 = 272.890, verrouiller = true, whiteliste = true, nom = "Cellule 3"},
-    { x1 = -1017.610, y1 = -2998.540, z1 = 13.950, h1 = 241.750, x2 = 450.540, y2 = -975.130, z2 = 30.690, h2 = 133.670, verrouiller = true, whiteliste = false, nom = "Bureau 1"},
-    { x1 = -1020.330, y1 = -3003.460, z1 = 13.950, h1 = 241.750, x2 = -75.750, y2 = -819.070, z2 = 326.180, h2 = 246.600, verrouiller = true, whiteliste = true, nom = "Surprise 1"},
+    { x1 = -1009.940, y1 = -2984.340, z1 = 13.950, h1 = 241.750, x2 = 460.260, y2 = -994.230, z2 = 24.910, h2 = 273.890, verrouiller = true, whiteliste = false, vehicule = true, nom = "Cellule 1"},
+    { x1 = -1012.610, y1 = -2989.210, z1 = 13.950, h1 = 241.750, x2 = 459.690, y2 = -997.790, z2 = 24.910, h2 = 273.890, verrouiller = true, whiteliste = false, vehicule = false, nom = "Cellule 2"},
+    { x1 = -1015.220, y1 = -2994.220, z1 = 13.950, h1 = 241.750, x2 = 459.520, y2 = -1001.440, z2 = 24.910, h2 = 273.890, verrouiller = true, whiteliste = false, vehicule = false, nom = "Cellule 3"},
+    { x1 = -1017.610, y1 = -2998.540, z1 = 13.950, h1 = 241.750, x2 = 450.540, y2 = -975.130, z2 = 30.690, h2 = 133.670, verrouiller = true, whiteliste = false, vehicule = false, nom = "Bureau 1"},
+    { x1 = -1020.330, y1 = -3003.460, z1 = 13.950, h1 = 241.750, x2 = -75.750, y2 = -819.070, z2 = 326.180, h2 = 246.600, verrouiller = true, whiteliste = false, vehicule = true, nom = "Surprise 1"},
 
     }
