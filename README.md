@@ -25,4 +25,5 @@ Bleu = Coordonnees d'entree <br>
 Vert = Coordonnees de sortie <br>
 Rose = NE PAS TOUCHER <br>
 Jaune = Reglage de l'attribution de la WhiteListe ou non pour le marqueur <br>
+Blanc = Reglage de l'autorisation du vehicule
 Rouge = Nom du marqueur et du blip
