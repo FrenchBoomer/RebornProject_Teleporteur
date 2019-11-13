@@ -18,7 +18,7 @@
 <br>
 Reglages : 
 
-<img src=https://imgur.com/XcVXYqi.png alt="" />
+<img src=https://imgur.com/QQZjSAD.png alt="" />
 
 Orange = Reglage de la WhiteListe par SteamID <br>
 Bleu = Coordonnees d'entree <br>
