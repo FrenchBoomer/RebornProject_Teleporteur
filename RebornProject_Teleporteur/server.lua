@@ -16,7 +16,7 @@ end)
 
 -- NE PAS TOUCHER !!!
 
-local VersionActuelle = '1.0.0'
+local VersionActuelle = '1.0.1'
 local NomGithub = 'RebornProject_Teleporteur'
 local Proprietaire = 'Walter White'
 
