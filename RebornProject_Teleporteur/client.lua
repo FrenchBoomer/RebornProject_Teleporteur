@@ -92,21 +92,59 @@ end
 
 function TeleportationDuJoueur()
     for i=1, #Coordonnees do
-        if GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), Coordonnees[i].x1,Coordonnees[i].y1,Coordonnees[i].z1, true) < 0.599 then
+        local targetPed = GetPlayerPed(-1)
+        if GetDistanceBetweenCoords(GetEntityCoords(targetPed), Coordonnees[i].x1,Coordonnees[i].y1,Coordonnees[i].z1, true) < 0.8009 then
             if timer == 0 then
-                DoScreenFadeOut(2000)
-                while IsScreenFadingOut() do Wait(0) end
-                NetworkFadeOutEntity(GetPlayerPed(-1), true, false)
-                Wait(2000)
-                SetEntityCoords(GetPlayerPed(-1), Coordonnees[i].x2,Coordonnees[i].y2,Coordonnees[i].z2)
-                SetEntityHeading(GetPlayerPed(-1), Coordonnees[i].h2)
-                NetworkFadeInEntity(GetPlayerPed(-1), 0)
-                Wait(2000)
-                current_coords = i
-                timer = 5
-                SimulatePlayerInputGait(PlayerId(), 1.0, 100, 1.0, 1, 0)
-                DoScreenFadeIn(2000)
-                while IsScreenFadingIn() do Wait(0) end
+                if Coordonnees[i].vehicule == true then
+                    if IsPedInAnyVehicle(targetPed) then
+                        DoScreenFadeOut(2000)
+                        while IsScreenFadingOut() do Wait(0) end
+                        NetworkFadeOutEntity(targetPed, true, false)
+                        Wait(2000)
+                        targetPed = GetVehiclePedIsUsing(targetPed)
+                        SetEntityCoords(targetPed, Coordonnees[i].x2,Coordonnees[i].y2,Coordonnees[i].z2)
+                        SetEntityHeading(targetPed, Coordonnees[i].h2)
+                        NetworkFadeInEntity(targetPed, 0)
+                        Wait(2000)
+                        current_coords = i
+                        timer = 5
+                        SimulatePlayerInputGait(PlayerId(), 1.0, 100, 1.0, 1, 0)
+                        DoScreenFadeIn(2000)
+                        while IsScreenFadingIn() do Wait(0) end
+                    else
+                        DoScreenFadeOut(2000)
+                        while IsScreenFadingOut() do Wait(0) end
+                        NetworkFadeOutEntity(targetPed, true, false)
+                        Wait(2000)
+                        SetEntityCoords(targetPed, Coordonnees[i].x2,Coordonnees[i].y2,Coordonnees[i].z2)
+                        SetEntityHeading(targetPed, Coordonnees[i].h2)
+                        NetworkFadeInEntity(targetPed, 0)
+                        Wait(2000)
+                        current_coords = i
+                        timer = 5
+                        SimulatePlayerInputGait(PlayerId(), 1.0, 100, 1.0, 1, 0)
+                        DoScreenFadeIn(2000)
+                        while IsScreenFadingIn() do Wait(0) end
+                    end
+                else
+                    if IsPedInAnyVehicle(targetPed) then
+                       TriggerEvent("RebornProject:notif", LangueChoisie.refusvehicule)
+                    else
+                        DoScreenFadeOut(2000)
+                        while IsScreenFadingOut() do Wait(0) end
+                        NetworkFadeOutEntity(targetPed, true, false)
+                        Wait(2000)
+                        SetEntityCoords(targetPed, Coordonnees[i].x2,Coordonnees[i].y2,Coordonnees[i].z2)
+                        SetEntityHeading(targetPed, Coordonnees[i].h2)
+                        NetworkFadeInEntity(targetPed, 0)
+                        Wait(2000)
+                        current_coords = i
+                        timer = 5
+                        SimulatePlayerInputGait(PlayerId(), 1.0, 100, 1.0, 1, 0)
+                        DoScreenFadeIn(2000)
+                        while IsScreenFadingIn() do Wait(0) end
+                    end
+                end
             end
         end
     end
@@ -114,21 +152,59 @@ end
 
 function TeleportationDuJoueur2()
     for i=1, #Coordonnees do
-        if GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), Coordonnees[i].x2,Coordonnees[i].y2,Coordonnees[i].z2, true) < 0.599 then
+        local targetPed = GetPlayerPed(-1)
+        if GetDistanceBetweenCoords(GetEntityCoords(targetPed), Coordonnees[i].x2,Coordonnees[i].y2,Coordonnees[i].z2, true) < 0.8009 then
             if timer == 0 then
-                DoScreenFadeOut(2000)
-                while IsScreenFadingOut() do Wait(0) end
-                NetworkFadeOutEntity(GetPlayerPed(-1), true, false)
-                Wait(2000)
-                SetEntityCoords(GetPlayerPed(-1), Coordonnees[i].x1,Coordonnees[i].y1,Coordonnees[i].z1)
-                SetEntityHeading(GetPlayerPed(-1), Coordonnees[i].h1)
-                NetworkFadeInEntity(GetPlayerPed(-1), 0)
-                Wait(2000)
-                current_coords = i
-                timer = 5
-                SimulatePlayerInputGait(PlayerId(), 1.0, 100, 1.0, 1, 0)
-                DoScreenFadeIn(2000)
-                while IsScreenFadingIn() do Wait(0) end
+                if Coordonnees[i].vehicule == true then
+                    if IsPedInAnyVehicle(targetPed) then
+                        DoScreenFadeOut(2000)
+                        while IsScreenFadingOut() do Wait(0) end
+                        NetworkFadeOutEntity(targetPed, true, false)
+                        Wait(2000)
+                        targetPed = GetVehiclePedIsUsing(targetPed)
+                        SetEntityCoords(targetPed, Coordonnees[i].x1,Coordonnees[i].y1,Coordonnees[i].z1)
+                        SetEntityHeading(targetPed, Coordonnees[i].h1)
+                        NetworkFadeInEntity(targetPed, 0)
+                        Wait(2000)
+                        current_coords = i
+                        timer = 5
+                        SimulatePlayerInputGait(PlayerId(), 1.0, 100, 1.0, 1, 0)
+                        DoScreenFadeIn(2000)
+                        while IsScreenFadingIn() do Wait(0) end
+                    else
+                        DoScreenFadeOut(2000)
+                        while IsScreenFadingOut() do Wait(0) end
+                        NetworkFadeOutEntity(targetPed, true, false)
+                        Wait(2000)
+                        SetEntityCoords(targetPed, Coordonnees[i].x1,Coordonnees[i].y1,Coordonnees[i].z1)
+                        SetEntityHeading(targetPed, Coordonnees[i].h1)
+                        NetworkFadeInEntity(targetPed, 0)
+                        Wait(2000)
+                        current_coords = i
+                        timer = 5
+                        SimulatePlayerInputGait(PlayerId(), 1.0, 100, 1.0, 1, 0)
+                        DoScreenFadeIn(2000)
+                        while IsScreenFadingIn() do Wait(0) end
+                    end
+                else
+                    if IsPedInAnyVehicle(targetPed) then
+                       TriggerEvent("RebornProject:notif", LangueChoisie.refusvehicule)
+                    else
+                        DoScreenFadeOut(2000)
+                        while IsScreenFadingOut() do Wait(0) end
+                        NetworkFadeOutEntity(targetPed, true, false)
+                        Wait(2000)
+                        SetEntityCoords(targetPed, Coordonnees[i].x1,Coordonnees[i].y1,Coordonnees[i].z1)
+                        SetEntityHeading(targetPed, Coordonnees[i].h1)
+                        NetworkFadeInEntity(targetPed, 0)
+                        Wait(2000)
+                        current_coords = i
+                        timer = 5
+                        SimulatePlayerInputGait(PlayerId(), 1.0, 100, 1.0, 1, 0)
+                        DoScreenFadeIn(2000)
+                        while IsScreenFadingIn() do Wait(0) end
+                    end
+                end
             end
         end
     end
@@ -153,7 +229,7 @@ Citizen.CreateThread(function()
             SetBlipColour(item.blip, BlipCouleur)
             SetBlipScale(item.blip, BlipTaille)
             SetBlipDisplay(item.blip, 2)
-            SetBlipFlashes(item.blip, true)
+            SetBlipFlashes(item.blip, BlipClignotant)
             BeginTextCommandSetBlipName("STRING")
             AddTextComponentString(item.nom)
             EndTextCommandSetBlipName(item.blip)
@@ -163,7 +239,7 @@ Citizen.CreateThread(function()
             SetBlipColour(item.blip2, BlipCouleur)
             SetBlipScale(item.blip2, BlipTaille)
             SetBlipDisplay(item.blip2, 2)
-            SetBlipFlashes(item.blip2, true)
+            SetBlipFlashes(item.blip2, BlipClignotant)
             BeginTextCommandSetBlipName("STRING")
             AddTextComponentString(item.nom)
             EndTextCommandSetBlipName(item.blip2)
@@ -226,10 +302,10 @@ Citizen.CreateThread(function()
             if GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), Coordonnees[i].x2,Coordonnees[i].y2,Coordonnees[i].z2, true) < 5.001 then
                 if AffichageDuTexteFlotant == true then
                     if Coordonnees[i].verrouiller == true then
-                        TexteFlotant(Coordonnees[i].x2, Coordonnees[i].y2, Coordonnees[i].z2, Coordonnees[i].nom.. " 🔓")
+                        TexteFlotant(Coordonnees[i].x2, Coordonnees[i].y2, Coordonnees[i].z2, Coordonnees[i].nom.. " 🔒")
                         TriggerEvent("RebornProject:DisplayHelpText", LangueChoisie.ouvrir)
                     else
-                        TexteFlotant(Coordonnees[i].x2, Coordonnees[i].y2, Coordonnees[i].z2, Coordonnees[i].nom.. " 🔒")
+                        TexteFlotant(Coordonnees[i].x2, Coordonnees[i].y2, Coordonnees[i].z2, Coordonnees[i].nom.. " 🔓")
                         TriggerEvent("RebornProject:DisplayHelpText", LangueChoisie.fermer)
                     end
                 end
